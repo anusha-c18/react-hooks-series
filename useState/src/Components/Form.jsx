@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Form.css";
 
-function Form({ updateAllTasks }) {
+function Form({ updateAllTasks, toggleModal }) {
   const [task, setTask] = useState("");
 
   const updateTaskText = (event) => {
@@ -15,7 +15,7 @@ function Form({ updateAllTasks }) {
       updateAllTasks(task, "todo");
       setTask("");
     } else {
-      //modal
+      toggleModal();
     }
   };
 
@@ -26,6 +26,7 @@ function Form({ updateAllTasks }) {
         className="task-text"
         value={task}
         onChange={updateTaskText}
+        placeholder="Enter Task Description"
       />
       <button type="submit" className="task-add">
         Add
