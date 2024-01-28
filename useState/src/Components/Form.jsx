@@ -1,17 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Form.css";
 
-function Form() {
+function Form({ updateAllTasks }) {
+  const [task, setTask] = useState("");
+
+  const updateTaskText = (event) => {
+    event.preventDefault();
+    setTask(event.target.value);
+  };
+
+  const updateTasks = (event) => {
+    event.preventDefault();
+    if (task != "") {
+      updateAllTasks(task);
+    } else {
+      //modal
+    }
+  };
+
   return (
-    <div className="task-form">
+    <form className="task-form" onSubmit={updateTasks}>
       <input
         type="text"
         className="task-text"
         name="task-text"
         id="task-text"
+        onChange={updateTaskText}
       />
-      <button className="task-add">Add</button>
-    </div>
+      <button type="submit" className="task-add">
+        Add
+      </button>
+    </form>
   );
 }
 
