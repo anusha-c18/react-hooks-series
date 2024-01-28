@@ -11,7 +11,7 @@
   flex-direction: column;
   width: 28%;
   height: 500px;
-  background-color: red;
+  overflow-y: auto;
   margin: 0px 5px;
   border-radius: 15px;
   padding: 5px;
@@ -20,4 +20,11 @@
 .tasks-section-heading {
   margin: 5px;
   text-align: center;
+}
+
+@media (max-width: 647px) {
+  .tasks-sections {
+    width: 80%;
+    margin: 5px;
+  }
 }

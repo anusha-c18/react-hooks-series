@@ -12,8 +12,6 @@ function App() {
     Completed: [],
   });
 
-  console.log(allTasks);
-
   const toggleModal = () => {
     setModalVisibility((prev) => {
       return !prev;

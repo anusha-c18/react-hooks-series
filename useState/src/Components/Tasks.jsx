@@ -1,5 +1,6 @@
 import React from "react";
 import "./Tasks.css";
+import Task from "./Task";
 
 function Tasks({ allTasks }) {
   const getColor = (tasksSection) => {
@@ -20,6 +21,9 @@ function Tasks({ allTasks }) {
           style={{ backgroundColor: getColor(tasksSection) }}
         >
           <p className="tasks-section-heading">{tasksSection}</p>
+          {allTasks[tasksSection].map((taskText) => (
+            <Task tasksSection={tasksSection} taskText={taskText} />
+          ))}
         </div>
       ))}
     </div>

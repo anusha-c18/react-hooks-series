@@ -1,0 +1,58 @@
+.individual-task-container {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  width: 80%;
+  margin: 5px auto;
+  padding: 2px;
+  border-radius: 9px;
+  justify-content: center;
+  height: 35%;
+}
+
+.individual-task {
+  overflow-x: auto;
+  overflow-y: scroll;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.individual-task-text {
+  text-wrap: wrap;
+  text-align: center;
+  width: 80%;
+}
+
+.shift-task {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.shift-button {
+  background-color: white;
+  border: none;
+}
+
+.arrow {
+  border: 2px solid white;
+  background: white;
+}
+
+.arrow:hover {
+  border: 2px solid black;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.shift-left {
+  transform: rotateY(180deg);
+}
+
+.visibility {
+  display: none;
+}
