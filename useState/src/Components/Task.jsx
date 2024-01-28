@@ -17,7 +17,11 @@ function Task({ tasksSection, taskText, shiftTask }) {
         <p className="individual-task-text">{taskText}</p>
       </div>
       <div className="shift-task">
-        <button className="shift-button shift-button-left">
+        <button
+          className={`shift-button shift-button-right ${
+            tasksSection === "ToDo" ? "visibility" : ""
+          }`}
+        >
           <img
             src={Arrow}
             alt="shift left"
@@ -25,7 +29,11 @@ function Task({ tasksSection, taskText, shiftTask }) {
             onClick={shiftLeft}
           />
         </button>
-        <button className="shift-button shift-button-right">
+        <button
+          className={`shift-button shift-button-right ${
+            tasksSection === "Completed" ? "visibility" : ""
+          }`}
+        >
           <img
             src={Arrow}
             alt="shift right"

@@ -23,7 +23,6 @@ function App() {
       ...prevTasks,
       [identifier]: [...prevTasks[identifier], value],
     }));
-    console.log(allTasks);
   };
 
   const shiftTask = (direction, tasksSection, taskText) => {
