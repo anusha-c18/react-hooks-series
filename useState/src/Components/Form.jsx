@@ -1,10 +1,16 @@
 import React from "react";
+import "./Form.css";
 
 function Form() {
   return (
-    <div className="form">
-      <input type="text" name="task-text" id="task-text" />
-      <button className="add">Add</button>
+    <div className="task-form">
+      <input
+        type="text"
+        className="task-text"
+        name="task-text"
+        id="task-text"
+      />
+      <button className="task-add">Add</button>
     </div>
   );
 }
