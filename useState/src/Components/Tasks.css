@@ -1,0 +1,23 @@
+.tasks-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.tasks-sections {
+  display: flex;
+  flex-direction: column;
+  width: 28%;
+  height: 500px;
+  background-color: red;
+  margin: 0px 5px;
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.tasks-section-heading {
+  margin: 5px;
+  text-align: center;
+}

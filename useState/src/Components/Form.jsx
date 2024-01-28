@@ -12,7 +12,7 @@ function Form({ updateAllTasks, toggleModal }) {
   const updateTasks = (event) => {
     event.preventDefault();
     if (task != "") {
-      updateAllTasks(task, "todo");
+      updateAllTasks(task, "ToDo");
       setTask("");
     } else {
       toggleModal();

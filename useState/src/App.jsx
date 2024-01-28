@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import "./App.css";
-import Form from "../src/Components/Form";
-import Modal from "../src/Components/EmptyTaskModal";
+import Form from "./Components/Form";
+import Modal from "./Components/EmptyTaskModal";
+import Tasks from "./Components/Tasks";
 
 function App() {
   const [modalVisibility, setModalVisibility] = useState(false);
   const [allTasks, setAllTasks] = useState({
-    todo: [],
-    ongoing: [],
-    completed: [],
+    ToDo: [],
+    Ongoing: [],
+    Completed: [],
   });
+
+  console.log(allTasks);
 
   const toggleModal = () => {
     setModalVisibility((prev) => {
@@ -29,6 +32,7 @@ function App() {
     <>
       {modalVisibility ? <Modal toggleModal={toggleModal} /> : null}
       <Form updateAllTasks={updateAllTasks} toggleModal={toggleModal} />
+      <Tasks allTasks={allTasks} />
     </>
   );
 }
