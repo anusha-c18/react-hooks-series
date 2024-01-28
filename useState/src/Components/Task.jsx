@@ -2,10 +2,14 @@ import React from "react";
 import Arrow from "../assets/arrow.png";
 import "./Task.css";
 
-function Task({ tasksSection, taskText }) {
-  const shiftLeft = () => {};
+function Task({ tasksSection, taskText, shiftTask }) {
+  const shiftLeft = () => {
+    shiftTask(-1, tasksSection, taskText);
+  };
 
-  const shiftRight = () => {};
+  const shiftRight = () => {
+    shiftTask(1, tasksSection, taskText);
+  };
 
   return (
     <div className="individual-task-container">
@@ -18,7 +22,6 @@ function Task({ tasksSection, taskText }) {
             src={Arrow}
             alt="shift left"
             className="shift-left arrow"
-            enabl
             onClick={shiftLeft}
           />
         </button>

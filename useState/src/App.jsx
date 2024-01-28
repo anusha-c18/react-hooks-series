@@ -26,11 +26,32 @@ function App() {
     console.log(allTasks);
   };
 
+  const shiftTask = (direction, tasksSection, taskText) => {
+    setAllTasks((prevTasks) => {
+      const updatedTasks = JSON.parse(JSON.stringify(prevTasks));
+      updatedTasks[tasksSection] = updatedTasks[tasksSection].filter(
+        (task) => task !== taskText
+      );
+      if (tasksSection == "ToDo") {
+        updatedTasks.Ongoing = [...updatedTasks.Ongoing, taskText];
+      } else if (tasksSection == "Completed") {
+        updatedTasks.Ongoing = [...updatedTasks.Ongoing, taskText];
+      } else {
+        if (direction == 1) {
+          updatedTasks.Completed = [...updatedTasks.Completed, taskText];
+        } else {
+          updatedTasks.ToDo = [...updatedTasks.ToDo, taskText];
+        }
+      }
+      return updatedTasks;
+    });
+  };
+
   return (
     <>
       {modalVisibility ? <Modal toggleModal={toggleModal} /> : null}
       <Form updateAllTasks={updateAllTasks} toggleModal={toggleModal} />
-      <Tasks allTasks={allTasks} />
+      <Tasks allTasks={allTasks} shiftTask={shiftTask} />
     </>
   );
 }
