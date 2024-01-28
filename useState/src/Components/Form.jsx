@@ -12,7 +12,8 @@ function Form({ updateAllTasks }) {
   const updateTasks = (event) => {
     event.preventDefault();
     if (task != "") {
-      updateAllTasks(task);
+      updateAllTasks(task, "todo");
+      setTask("");
     } else {
       //modal
     }
@@ -23,8 +24,7 @@ function Form({ updateAllTasks }) {
       <input
         type="text"
         className="task-text"
-        name="task-text"
-        id="task-text"
+        value={task}
         onChange={updateTaskText}
       />
       <button type="submit" className="task-add">

@@ -9,10 +9,10 @@ function App() {
     completed: [],
   });
 
-  const updateAllTasks = (value) => {
+  const updateAllTasks = (value, identifier) => {
     setAllTasks((prevTasks) => ({
       ...prevTasks,
-      todo: [...prevTasks.todo, value],
+      [identifier]: [...prevTasks[identifier], value],
     }));
     console.log(allTasks);
   };
