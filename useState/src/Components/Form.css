@@ -1,8 +1,6 @@
 .task-form {
   background: rgba(242, 133, 133, 0.55);
   border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(6.5px);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

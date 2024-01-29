@@ -3,6 +3,7 @@ import "./App.css";
 import Form from "./Components/Form";
 import Modal from "./Components/EmptyTaskModal";
 import Tasks from "./Components/Tasks";
+import Layout from "./Components/Layout.jsx";
 
 function App() {
   const [modalVisibility, setModalVisibility] = useState(false);
@@ -47,11 +48,11 @@ function App() {
   };
 
   return (
-    <>
+    <Layout>
       {modalVisibility ? <Modal toggleModal={toggleModal} /> : null}
       <Form updateAllTasks={updateAllTasks} toggleModal={toggleModal} />
       <Tasks allTasks={allTasks} shiftTask={shiftTask} />
-    </>
+    </Layout>
   );
 }
 
