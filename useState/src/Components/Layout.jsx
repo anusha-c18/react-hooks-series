@@ -7,8 +7,7 @@ function Layout({ children }) {
   const [theme, setTheme] = useState({ light: true, dark: false });
 
   const updateTheme = (event) => {
-    console.log(event.target.id);
-    if (event.target.id == "light") {
+    if (event.target.className.includes("light")) {
       if (theme.light != true) {
         setTheme((prevTheme) => {
           return { light: true, dark: false };
@@ -29,16 +28,11 @@ function Layout({ children }) {
       style={{ backgroundColor: theme.light ? "white" : "#1e1e1e" }}
     >
       <div className="theme-container">
-        <button className="theme-button" onClick={updateTheme}>
-          <img
-            src={light}
-            alt="light theme"
-            className="theme-image"
-            id="light"
-          />
+        <button className="theme-button light" onClick={updateTheme}>
+          <img src={light} alt="light theme" className="theme-image light" />
         </button>
-        <button className="theme-button" onClick={updateTheme}>
-          <img src={dark} alt="dark theme" className="theme-image" id="dark" />
+        <button className="theme-button dark" onClick={updateTheme}>
+          <img src={dark} alt="dark theme" className="theme-image dark" />
         </button>
       </div>
       {children}

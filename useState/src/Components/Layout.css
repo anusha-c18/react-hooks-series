@@ -6,6 +6,7 @@
   position: fixed;
   overflow: auto;
   padding: 5px;
+  transition: background 0.8s ease-in-out;
 }
 
 .theme-container {
