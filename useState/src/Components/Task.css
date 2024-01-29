@@ -25,6 +25,7 @@
   text-wrap: wrap;
   text-align: center;
   width: 80%;
+  height: -webkit-fill-available;
 }
 
 .shift-task {
